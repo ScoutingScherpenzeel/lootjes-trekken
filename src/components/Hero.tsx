@@ -2,63 +2,117 @@
 
 import { motion } from "motion/react"
 
-export default function Hero({name}: {name: string}) {
+type HeroProps = {
+    name: string;
+};
+
+export default function Hero({ name }: HeroProps) {
     return (
-        <div className="relative overflow-hidden bg-red-600 text-white border-b-8 border-green-700">
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, white 2px, white 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, white 2px, white 4px)',
-                    backgroundSize: '40px 40px'
-                }} />
-            </div>
-            {/* Christmas Trees */}
-            <div className="absolute bottom-0 left-10 text-8xl opacity-30">🎄</div>
-            <div className="absolute bottom-0 right-20 text-7xl opacity-30">🎄</div>
-            <div className="absolute top-10 right-40 text-6xl opacity-20">⛄</div>
+        <div className="relative overflow-hidden border-b-8 border-black bg-yellow-400 text-black shadow-[0_12px_0_0_rgba(0,0,0,1)]">
+            <div
+                className="pointer-events-none absolute inset-0 opacity-20"
+                style={{
+                    backgroundImage:
+                        "repeating-linear-gradient(135deg, transparent, transparent 24px, rgba(0,0,0,0.2) 24px, rgba(0,0,0,0.2) 26px)",
+                }}
+            />
+
+            <div className="absolute -top-20 -left-20 h-64 w-64 -rotate-12 border-8 border-black bg-red-600 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]" />
+            <div className="absolute -bottom-24 right-[-60px] h-72 w-72 rotate-6 border-8 border-black bg-green-600 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] opacity-80" />
 
             <div className="relative max-w-7xl mx-auto px-6 py-20">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 32 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="grid md:grid-cols-2 gap-8 items-center"
+                    transition={{ duration: 0.35 }}
+                    className="grid items-center gap-12 md:grid-cols-[1.4fr_1fr]"
                 >
-                    <div className="space-y-6">
-                        <div className="flex items-start gap-4">
-                            <div className="w-20 h-20 bg-green-700 border-4 border-white flex items-center justify-center transform -rotate-3">
-                                <span className="text-4xl">🎁</span>
+                    <div className="space-y-8">
+                        <div className="flex items-center gap-4">
+                            <div className="flex h-20 w-20 -rotate-3 items-center justify-center border-4 border-black bg-red-600 text-4xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                                🎁
                             </div>
-                            <div className="w-16 h-16 bg-white border-4 border-red-600 flex items-center justify-center transform rotate-6">
-                                <span className="text-3xl">⭐</span>
-                            </div>
-                            <div className="w-14 h-14 bg-yellow-400 border-4 border-white flex items-center justify-center transform -rotate-12">
-                                <span className="text-2xl">❄️</span>
-                            </div>
-                        </div>
-                        <h1 className="text-7xl md:text-8xl font-black leading-none uppercase tracking-tight">
-                            LOOTJES<br />TREKKEN
-                        </h1>
-                        <div className="border-l-8 border-white pl-6 py-4 bg-green-700/30">
-                            <p className="text-2xl font-bold uppercase">
-                                🎅 Welkom, {name}!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="hidden md:block">
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="h-40 bg-green-700 border-4 border-white transform rotate-2 flex items-center justify-center text-6xl">
-                                🎄
-                            </div>
-                            <div className="h-40 bg-white border-4 border-red-600 transform -rotate-3 flex items-center justify-center text-6xl">
-                                ⛄
-                            </div>
-                            <div className="h-40 bg-white border-4 border-green-700 transform -rotate-1 flex items-center justify-center text-6xl">
-                                🎅
-                            </div>
-                            <div className="h-40 bg-green-700 border-4 border-white transform rotate-3 flex items-center justify-center text-6xl">
+                            <div className="flex h-16 w-16 rotate-6 items-center justify-center border-4 border-black bg-white text-3xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
                                 ⭐
                             </div>
+                            <div className="flex h-14 w-14 -rotate-12 items-center justify-center border-4 border-black bg-green-500 text-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                ❄️
+                            </div>
                         </div>
+
+                        <div className="space-y-4">
+                            <p className="inline-flex items-center gap-3 border-4 border-black bg-white px-5 py-2 text-lg font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                                🎅 Welkom, {name}!
+                            </p>
+                            <h1 className="text-6xl leading-none font-black uppercase tracking-tight text-black drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] md:text-8xl">
+                                <span className="mb-2 inline-block border-4 border-black bg-black px-3 py-1 text-yellow-300 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                                    Lootjes
+                                </span>
+                                Trekken
+                            
+                            </h1>
+                            <p className="max-w-xl border-l-8 border-black bg-white/80 px-6 py-4 text-lg font-semibold leading-relaxed text-black">
+                                Organiseer eenvoudig je Sinterkerst of andere feestelijke lootjestrekkingen. Voeg deelnemers toe, start een trekking en deel een persoonlijke link naar elke deelnemer!
+                            </p>
+                        </div>
+
+                        <div className="flex flex-wrap gap-4 text-sm font-black uppercase">
+                            <span className="inline-flex items-center gap-2 border-4 border-black bg-white px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                🎄 Maak onbeperkt groepen
+                            </span>
+                            <span className="inline-flex items-center gap-2 border-4 border-black bg-red-500 px-4 py-2 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                🎁 Deel lootjes via een link
+                            </span>
+                            <span className="inline-flex items-center gap-2 border-4 border-black bg-green-500 px-4 py-2 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                                ❄️ Geen e-mailadressen of andere poespas!
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="hidden md:block">
+                        <motion.div
+                            initial={{ rotate: -6, scale: 0.9, opacity: 0 }}
+                            animate={{ rotate: 0, scale: 1, opacity: 1 }}
+                            transition={{ type: "spring", stiffness: 120, damping: 14 }}
+                            className="relative grid grid-cols-2 gap-6"
+                        >
+                            {[{
+                                emoji: "🎄",
+                                className: "bg-white text-black",
+                                rotate: -8,
+                                delay: 0
+                            }, {
+                                emoji: "⛄",
+                                className: "bg-red-500 text-white",
+                                rotate: 10,
+                                delay: 0.1
+                            }, {
+                                emoji: "🎅",
+                                className: "bg-yellow-300 text-black",
+                                rotate: 6,
+                                delay: 0.2
+                            }, {
+                                emoji: "⭐",
+                                className: "bg-green-500 text-white",
+                                rotate: -12,
+                                delay: 0.3
+                            }].map((card) => (
+                                <motion.div
+                                    key={card.emoji}
+                                    className={`flex h-48 items-center justify-center border-4 border-black text-7xl font-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] ${card.className}`}
+                                    initial={{ rotate: card.rotate, y: 12 }}
+                                    animate={{ rotate: [card.rotate, card.rotate + 4, card.rotate], y: [12, 0, 12] }}
+                                    transition={{
+                                        repeat: Infinity,
+                                        duration: 6.5,
+                                        delay: card.delay,
+                                        ease: "easeInOut"
+                                    }}
+                                >
+                                    {card.emoji}
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>
