@@ -10,9 +10,10 @@ import type { groups } from "@/db/schema/schema";
 import { motion } from 'framer-motion';
 import DeleteGroupDialog from "@/components/DeleteGroupDialog";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const colors = ['bg-red-600', 'bg-green-700', 'bg-white', 'bg-red-600'];
-const rotations = ['rotate-1', '-rotate-2', 'rotate-2', '-rotate-1'];
+const rotations = ['sm:rotate-1', 'sm:-rotate-2', 'sm:rotate-2', 'sm:-rotate-1'];
 const emojis = ['🎄', '⛄', '🎅', '⭐'];
 
 type GroupRow = typeof groups.$inferSelect;
@@ -63,9 +64,14 @@ export default function GroupCard({ group, participantCount = 0, index = 0 }: Gr
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             whileHover={{ scale: 1.02, rotate: 0 }}
             transition={{ duration: 0.2 }}
-            className={`transform ${rotation}`}
+            className={cn("w-full", "transform", rotation)}
         >
-            <Card className={`relative overflow-hidden border-8 border-black ${bgColor} shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all`}>
+            <Card
+                className={cn(
+                    "relative w-full overflow-hidden border-8 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all",
+                    bgColor
+                )}
+            >
                 <div className="absolute top-4 right-4 text-6xl opacity-30">{emoji}</div>
                 <div className="absolute bottom-2 left-2 text-3xl opacity-20">❄️</div>
 

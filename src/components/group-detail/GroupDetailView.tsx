@@ -84,7 +84,7 @@ export default function GroupDetailView({ group, participants }: GroupDetailView
                         >
                             <Link href="/">
                                 <ArrowLeft className="mr-2 h-5 w-5" />
-                                Terug naar overzicht
+                                Terug
                             </Link>
                         </Button>
 
