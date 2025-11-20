@@ -1,10 +1,9 @@
 "use server";
 
 import { getGroupsForUser } from "@/actions/groupsAction";
-import GroupList from "@/components/GroupList";
 import Hero from "@/components/Hero";
 import NewGroup from "@/components/NewGroup";
-import NoGroups from "@/components/NoGroups";
+import GroupsSection from "@/components/GroupsSection";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
@@ -35,13 +34,7 @@ export default async function Home() {
          <NewGroup />
         </div>
 
-        {groups.length === 0 ? (
-          <NoGroups />
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <GroupList groups={groups} />
-          </div>
-        )}
+        <GroupsSection groups={groups} />
       </div> 
 
 

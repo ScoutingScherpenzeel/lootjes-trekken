@@ -9,7 +9,7 @@ type GroupListProps = {
 
 export default function GroupList({ groups }: GroupListProps) {
   return (
-    <AnimatePresence initial={false}>
+    <AnimatePresence>
       {groups.map((group, index) => (
         <GroupCard
           key={group.id}
