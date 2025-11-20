@@ -73,7 +73,7 @@ export default function GroupDetailView({ group, participants }: GroupDetailView
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="relative overflow-hidden border-8 border-red-500 bg-white px-8 py-10 shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] -rotate-1"
+                    className="relative overflow-hidden border-8 border-red-500 bg-white px-8 py-10 shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] -rotate-1 -translate-x-1"
                 >
 
                     <div className="relative z-10 grid gap-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center">

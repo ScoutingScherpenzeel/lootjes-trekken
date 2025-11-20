@@ -17,8 +17,8 @@ export default function Hero({ name }: HeroProps) {
                 }}
             />
 
-            <div className="absolute -top-20 -left-20 h-64 w-64 -rotate-12 border-8 border-black bg-red-600 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]" />
-            <div className="absolute -bottom-24 right-[-60px] h-72 w-72 rotate-6 border-8 border-black bg-green-600 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] opacity-80" />
+            <div className="absolute hidden lg:block -top-20 -left-20 h-64 w-64 -rotate-12 border-8 border-black bg-red-600 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]" />
+            <div className="absolute hidden lg:block -bottom-24 right-[-60px] h-72 w-72 rotate-6 border-8 border-black bg-green-600 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] opacity-80" />
 
             <div className="relative max-w-7xl mx-auto px-6 py-20">
                 <motion.div
