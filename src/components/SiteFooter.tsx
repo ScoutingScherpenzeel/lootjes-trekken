@@ -1,0 +1,19 @@
+export default function SiteFooter() {
+  return (
+    <footer className="mt-12 border-t-8 border-black bg-white px-6 py-6 text-sm">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 text-center font-semibold uppercase text-black/70 sm:flex-row sm:text-left">
+        <p>
+          © {new Date().getFullYear()} Lootjes Trekken — gemaakt met 💛 door Scouting Scherpenzeel
+        </p>
+        <a
+                  href="https://tikkie.me/pay/drht82mirkof1fvjd122"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 border-4 border-black bg-yellow-300 px-4 py-2 font-black uppercase text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-yellow-200 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+        >
+          Trakteer op koffie
+        </a>
+      </div>
+    </footer>
+  );
+}

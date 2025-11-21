@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Snowfall from "@/components/Snowfall";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Lootjes trekken",
@@ -18,7 +19,10 @@ export default function RootLayout({
         className={`antialiased min-h-screen bg-white relative`}
       >
         <Snowfall style={{ zIndex: 50 }} />
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );
