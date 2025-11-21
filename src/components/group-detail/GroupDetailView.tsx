@@ -184,7 +184,7 @@ export default function GroupDetailView({ group, participants }: GroupDetailView
                                         <Button
                                             onClick={handleDrawGroup}
                                             disabled={!canDraw || isDrawing}
-                                            className="h-14 w-full border-4 border-black bg-white text-lg font-black uppercase hover:text-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-white hover:bg-black text-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:cursor-not-allowed disabled:opacity-70"
+                                            className="h-14 w-full border-4 border-black bg-white text-lg font-black uppercase hover:text-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-black text-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:cursor-not-allowed disabled:opacity-70"
                                         >
                                             {isDrawing ? (
                                                 <>

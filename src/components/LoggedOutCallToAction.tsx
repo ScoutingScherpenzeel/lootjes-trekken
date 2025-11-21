@@ -4,8 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import LoginPrompt from "@/components/LoginPrompt";
-import { Gift, Mail, PartyPopper, Sparkles } from "lucide-react";
-import { motion } from "motion/react";
+import { Gift, Sparkles } from "lucide-react";
 import { DialogTitle } from "@radix-ui/react-dialog";
 
 export default function LoggedOutCallToAction() {

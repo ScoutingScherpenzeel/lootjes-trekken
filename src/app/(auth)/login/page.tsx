@@ -1,5 +1,4 @@
 import LoginPrompt from "@/components/LoginPrompt";
-import { Mail } from "lucide-react";
 
 export default function LoginPage() {
     const loginMethods = [
