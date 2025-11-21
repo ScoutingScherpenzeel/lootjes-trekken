@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Snowfall from "@/components/Snowfall";
 import SiteFooter from "@/components/SiteFooter";
-
+import { Analytics } from "@vercel/analytics/next"
 export const metadata: Metadata = {
   title: "lootje.app – Eenvoudig lootjes trekken",
   description: "Lootjes trekken, zonder poespas.",
@@ -23,6 +23,7 @@ export default function RootLayout({
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </div>
+        <Analytics />
       </body>
     </html>
   );
