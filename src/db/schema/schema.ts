@@ -56,6 +56,8 @@ export const participants = pgTable('participants', {
 	// Secret token used in the participant URL
 	viewToken: varchar('view_token', { length: 32 }).notNull().unique(),
 
+    viewedAt: timestamp('viewed_at', { withTimezone: true }),
+
 	/**
 	 * The participant this person has drawn.
 	 * Filled after the organizer triggers the draw.
