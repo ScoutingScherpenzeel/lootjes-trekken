@@ -35,7 +35,7 @@ export default function LoggedOutCallToAction() {
                 className="h-14 gap-3 border-4 border-black bg-red-500 px-8 text-lg font-black uppercase text-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-red-800 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
               >
                 <Gift className="h-5 w-5" />
-                Start met lootjes trekken
+                Start nu!
               </Button>
             </div>
           </div>
