@@ -183,21 +183,21 @@ export default function ParticipantsList({
         className,
       )}
     >
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">
           <div className="space-y-1">
             <p className="inline-flex items-center gap-2 border-4 border-black bg-yellow-300 px-3 py-1 text-xs font-black uppercase tracking-[0.3em]">
               Deelnemers
             </p>
             <h2 className="text-4xl font-black uppercase leading-none tracking-tight">
-              Bouw je lijst
+              {isDrawn ? "Getrokken lootjes" : "Bouw je lijst"}
             </h2>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <p className="text-xs font-semibold uppercase text-black/60">
                 {participants.length} {participants.length === 1 ? "persoon" : "personen"} aangemeld
               </p>
               {hasAssignments ? (
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3 mt-4">
                   <Button
                     type="button"
                     onClick={() => {
