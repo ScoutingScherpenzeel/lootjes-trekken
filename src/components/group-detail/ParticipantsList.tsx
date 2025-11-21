@@ -16,7 +16,7 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
-import StatusChip from "@/components/StatusChip";
+import {Badge} from "@/components/ui/badge";
 
 interface ParticipantListProps {
     participants: GroupDetailParticipant[];
@@ -187,9 +187,9 @@ export default function ParticipantsList({
             <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-4">
                     <div className="space-y-1">
-                        <p className="inline-flex items-center gap-2 border-4 border-black bg-yellow-300 px-3 py-1 text-xs font-black uppercase tracking-[0.3em]">
+                        <Badge variant={"yellow"} size={"large"}>
                             Deelnemers
-                        </p>
+                        </Badge>
                         <h2 className="text-4xl font-black uppercase leading-none tracking-tight">
                             {isDrawn ? "Getrokken lootjes" : "Bouw je lijst"}
                         </h2>
@@ -328,13 +328,12 @@ export default function ParticipantsList({
                                                         <div className={"flex flex-col flex-wrap"}>
                                                         <p className="text-2xl font-black uppercase tracking-tight">{participant.name}</p>
 
-                                                        {participant.viewedAt != null && (<StatusChip
-                                                            tone={"success"}
+                                                        {participant.viewedAt != null && (<Badge
+                                                            variant={"success"}
                                                             size={"small"}
-                                                            icon={<CheckIcon className="h-4 w-4"/>}
                                                         >
-                                                            Bekeken
-                                                        </StatusChip>)}
+                                                            <CheckIcon/> Bekeken
+                                                        </Badge>)}
                                                         </div>
                                                         <AnimatePresence mode="wait" initial={false}>
                                                             {showAssignments ? (
