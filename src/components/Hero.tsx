@@ -78,7 +78,7 @@ export default function Hero({ name }: HeroProps) {
 
                         <div className="space-y-4">
                             <p className="inline-flex items-center gap-3 border-4 border-black bg-white px-5 py-2 text-lg font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                                {isLoggedIn ? `🎅 Welkom, ${name}!` : "🎅 Welkom bij Lootjes Trekken!"}
+                                {isLoggedIn ? `🎅 Welkom, ${name}!` : "🎅 Welkom bij lootje.app!"}
                             </p>
                             <h1 className="text-6xl leading-none font-black uppercase tracking-tight text-black drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] md:text-8xl">
                                 <span className="mb-2 inline-block border-4 border-black bg-black px-3 py-1 text-yellow-300 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
