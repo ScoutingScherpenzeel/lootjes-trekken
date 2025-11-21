@@ -1,12 +1,35 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "motion/react"
+import { Button } from "@/components/ui/button"
+import { authClient } from "@/lib/auth-client"
+import { LogOut } from "lucide-react"
 
 type HeroProps = {
-    name: string;
+    name?: string | null;
 };
 
 export default function Hero({ name }: HeroProps) {
+    const isLoggedIn = Boolean(name);
+    const [isSigningOut, setIsSigningOut] = useState(false);
+
+    const handleSignOut = async () => {
+        if (isSigningOut) {
+            return;
+        }
+
+        setIsSigningOut(true);
+
+        try {
+            await authClient.signOut();
+            window.location.assign("/");
+        } catch (error) {
+            console.error("Failed to sign out", error);
+            setIsSigningOut(false);
+        }
+    };
+
     return (
         <div className="relative overflow-hidden border-b-8 border-black bg-yellow-400 text-black shadow-[0_12px_0_0_rgba(0,0,0,1)]">
             <div
@@ -21,6 +44,19 @@ export default function Hero({ name }: HeroProps) {
             <div className="absolute hidden lg:block -bottom-24 right-[-60px] h-72 w-72 rotate-6 border-8 border-black bg-green-600 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] opacity-80" />
 
             <div className="relative max-w-7xl mx-auto px-6 py-20">
+                {isLoggedIn ? (
+                    <div className="pointer-events-auto absolute right-6 top-6">
+                        <Button
+                            type="button"
+                            onClick={handleSignOut}
+                            disabled={isSigningOut}
+                            className="inline-flex h-11 items-center gap-2 border-4 border-black bg-white px-4 font-black uppercase text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-yellow-100 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                        >
+                            <LogOut className="h-4 w-4" />
+                            {isSigningOut ? "Bezig..." : "Uitloggen"}
+                        </Button>
+                    </div>
+                ) : null}
                 <motion.div
                     initial={{ opacity: 0, y: 32 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -42,7 +78,7 @@ export default function Hero({ name }: HeroProps) {
 
                         <div className="space-y-4">
                             <p className="inline-flex items-center gap-3 border-4 border-black bg-white px-5 py-2 text-lg font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                                🎅 Welkom, {name}!
+                                {isLoggedIn ? `🎅 Welkom, ${name}!` : "🎅 Welkom bij Lootjes Trekken!"}
                             </p>
                             <h1 className="text-6xl leading-none font-black uppercase tracking-tight text-black drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] md:text-8xl">
                                 <span className="mb-2 inline-block border-4 border-black bg-black px-3 py-1 text-yellow-300 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">

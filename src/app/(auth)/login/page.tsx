@@ -1,6 +1,19 @@
-"use client";
-import { authClient } from "@/lib/auth-client";
+import LoginPrompt from "@/components/LoginPrompt";
+import { Mail } from "lucide-react";
 
 export default function LoginPage() {
-    authClient.signIn.social({ provider: "google" });
+    const loginMethods = [
+        {
+            provider: "google",
+            label: "Doorgaan met Google",
+            accentClass: "bg-yellow-300 hover:bg-yellow-200 text-black",
+            icon: "G",
+        }
+    ];
+
+    return (
+        <main className="flex min-h-screen items-center justify-center bg-yellow-300 px-6 py-16">
+            <LoginPrompt className="max-w-xl w-full" methods={loginMethods} />
+        </main>
+    );
 }
