@@ -1,9 +1,9 @@
 export default function SiteFooter() {
   return (
-    <footer className="mt-12 border-t-8 border-black bg-white px-6 py-6 text-sm">
+    <footer data-site-footer className="border-t-8 border-black bg-white px-6 py-6 text-sm">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 text-center font-semibold uppercase text-black/70 sm:flex-row sm:text-left">
         <p>
-          © {new Date().getFullYear()} Lootjes Trekken — gemaakt met 💛 door Scouting Scherpenzeel
+          © {new Date().getFullYear()} Lootje.app — gemaakt met 💛 door Melvin Snijders
         </p>
         <a
                   href="https://tikkie.me/pay/drht82mirkof1fvjd122"

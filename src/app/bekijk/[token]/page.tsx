@@ -2,6 +2,7 @@ import DeelnemerView, {
     type ParticipantRevealViewProps,
 } from "@/components/DeelnemerView";
 import {getParticipantReveal} from "@/actions/groupDetailActions";
+import HideFooterOnMount from "@/components/HideFooterOnMount";
 
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
@@ -44,5 +45,10 @@ export default async function ParticipantRevealPage({params}: PageProps) {
     const record = await getParticipantReveal(token);
     const viewProps = toViewProps(record);
 
-    return <DeelnemerView {...viewProps} />;
+    return (
+        <>
+            <HideFooterOnMount />
+            <DeelnemerView {...viewProps} />
+        </>
+    );
 }
