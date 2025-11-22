@@ -34,7 +34,7 @@ export default function DeleteGroupDialog({
             <DialogContent
                 className="sm:max-w-[480px] border-8 border-black bg-white shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] p-0">
                 <DialogHeader className="bg-black text-white p-6 border-b-8 border-white">
-                    <DialogTitle className="text-2xl font-black uppercase tracking-tight">
+                    <DialogTitle className="text-2xl font-black text-white uppercase tracking-tight">
                         Trekking verwijderen
                     </DialogTitle>
                     <DialogDescription className="text-white/80 font-bold text-base">
