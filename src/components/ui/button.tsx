@@ -12,7 +12,8 @@ const buttonVariants = cva(
                 default: "bg-black text-white hover:bg-gray-900",
                 outline: "bg-white text-black hover:bg-gray-200",
                 success: "bg-green-400 text-black hover:bg-green-300",
-                destructive: "bg-red-600 text-white hover:bg-red-700 "
+                destructive: "bg-red-600 text-white hover:bg-red-700",
+                yellow: "bg-yellow-400 text-black hover:bg-yellow-300",
             },
             size: {
                 sm: "has-[>svg]:px-2.5 h-10 px-4 py-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)]",

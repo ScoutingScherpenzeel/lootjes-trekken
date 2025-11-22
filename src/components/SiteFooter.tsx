@@ -1,3 +1,6 @@
+import {Button} from "@/components/ui/button";
+import {Coffee} from "lucide-react";
+
 export default function SiteFooter() {
   return (
     <footer data-site-footer className="border-t-8 border-black bg-white px-6 py-6 text-sm">
@@ -5,14 +8,16 @@ export default function SiteFooter() {
         <p>
           © {new Date().getFullYear()} Lootje.app — gemaakt met 💛 door Melvin Snijders
         </p>
-        <a
+          <Button asChild variant={"yellow"} size={"sm"}>
+              <a
                   href="https://tikkie.me/pay/drht82mirkof1fvjd122"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 border-4 border-black bg-yellow-300 px-4 py-2 font-black uppercase text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-yellow-200 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-        >
-          Trakteer op koffie
-        </a>
+                  target="_blank"
+                  rel="noopener noreferrer"
+              >
+                  <Coffee/> Trakteer op koffie
+              </a>
+          </Button>
+
       </div>
     </footer>
   );

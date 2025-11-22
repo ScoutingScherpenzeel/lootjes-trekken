@@ -88,7 +88,7 @@ export default function Hero({name}: HeroProps) {
                                 <span
                                     className="mb-2 inline-block border-4 border-black bg-black px-3 py-1 text-yellow-300 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
                                     Lootjes
-                                </span>
+                                </span><br/>
                                 Trekken
 
                             </h1>

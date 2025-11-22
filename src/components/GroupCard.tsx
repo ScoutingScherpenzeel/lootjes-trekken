@@ -78,7 +78,7 @@ export default function GroupCard({group, participantCount = 0, index = 0}: Grou
                 <div className="absolute bottom-2 left-2 text-3xl opacity-20">❄️</div>
 
                 <CardHeader className="relative pb-2">
-                    <div className="flex items-start justify-between gap-2">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
                         <CardTitle
                             className={`text-3xl font-black uppercase tracking-tight leading-tight ${isDark ? 'text-white' : 'text-black'}`}>
                             {group.name}
