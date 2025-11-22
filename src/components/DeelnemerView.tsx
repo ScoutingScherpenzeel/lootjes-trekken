@@ -187,7 +187,7 @@ function RevealExperience({participantName, assignedParticipantName, groupName, 
 										</span>
                                         <p className="text-sm font-black uppercase tracking-[0.4em] text-yellow-200">Jij
                                             hebt getrokken:</p>
-                                        <h2 className="mt-4 text-4xl font-black uppercase leading-tight sm:text-5xl">
+                                        <h2 className="mt-4 text-4xl font-black text-white uppercase leading-tight sm:text-5xl">
                                             {assignedParticipantName}
                                         </h2>
                                     </motion.div>
